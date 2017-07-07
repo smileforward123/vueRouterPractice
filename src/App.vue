@@ -14,6 +14,10 @@
       <li>
         <router-link :to="{path:'apple/redApple'}">apple</router-link>
       </li>
+      <li>
+      <p>{{count}}</p>
+      </li>
+      
     </ul>
     <hr/>
     <router-view ></router-view>
@@ -26,7 +30,15 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  computed:{
+    count(){
+      return this.$store.getters.getCount;
+    }
+  }
+  
+
+  
 }
 </script>
 
